@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6850379450015564055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6850379450015564054}
+  - component: {fileID: 6850379450015564041}
+  m_Layer: 0
+  m_Name: Memo_Mgr
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6850379450015564054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6850379450015564055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6850379450015564041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6850379450015564055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072a757a69a219044b44f8ce0eb5a867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackdot: {fileID: 7137670937735629863, guid: 98035b4f97f85ec4a8a6fd534ba1794f,
+    type: 3}
+  bluedot: {fileID: 352240420050938870, guid: 5661a22acbf9e7f49a1842079da8ba25, type: 3}
+  reddot: {fileID: 1097902181009768119, guid: af6c3ea56196a2f40a42e403798441c9, type: 3}
+  memoPaper_prefab: {fileID: 4684995374363723943, guid: b00dcab87c081c14981f8f7b069c6068,
+    type: 3}
+  memo: {fileID: 0}
+  memoOpenBtn: {fileID: 0}
+  memoPaperSpawning: {fileID: 0}
+  BlackPenBtn: {fileID: 0}
+  BluePenBtn: {fileID: 0}
+  RedPenBtn: {fileID: 0}
+  EraseBtn: {fileID: 0}
+  CloseBtn: {fileID: 0}
+  selectedDotColor: {fileID: 0}
+  memoPaper: {fileID: 0}
