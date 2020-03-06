@@ -11,6 +11,8 @@ public class CloseUp : MonoBehaviour
     [SerializeField] GameObject[] Panel_to_Out;
     [SerializeField] public GameObject PreviousPanel;
 
+    [SerializeField] const float BGM_Volume = 0.4f;
+
     void Update()
     {
         OnTouchDetected();
@@ -78,7 +80,7 @@ public class CloseUp : MonoBehaviour
                                 if(gameObject.tag == "Hint")
                                 {
                                     FindObjectOfType<GameManager>().GetComponent<AudioSource>().UnPause();
-                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(0.15f, 2f);
+                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(BGM_Volume, 2f);
                                 }
 
                                 else
@@ -102,7 +104,7 @@ public class CloseUp : MonoBehaviour
                             if(PreviousPanel == null)
                             {
                                     FindObjectOfType<GameManager>().GetComponent<AudioSource>().UnPause();
-                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(0.15f, 2f);
+                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(BGM_Volume, 2f);
                             }
 
                             else
@@ -112,7 +114,7 @@ public class CloseUp : MonoBehaviour
                                 else
                                 {
                                     FindObjectOfType<GameManager>().GetComponent<AudioSource>().UnPause();
-                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(0.15f, 2f);
+                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(BGM_Volume, 2f);
                                 }
 
                             }
