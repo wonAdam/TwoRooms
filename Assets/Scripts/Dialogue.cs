@@ -14,8 +14,9 @@ public class Dialogue : MonoBehaviour
     public bool isDDororo = false;
     public List<string> speakersBuffer;
     public List<string> contentsBuffer;
+    [SerializeField] Animator afterDialogueTrigger = null;
 
-    public void StartDialogue(List<KeyValuePair<string, string>> speakerNcontents)
+    public void StartDialogue(List<KeyValuePair<string, string>> speakerNcontents, int scene_num = 0)
     {
         StopAllCoroutines();
         speakersBuffer.Clear();
@@ -34,7 +35,7 @@ public class Dialogue : MonoBehaviour
     }
 
 
-    private IEnumerator Dialogue_Coroutine(string speaker, string content)
+    private IEnumerator Dialogue_Coroutine(string speaker, string content, int scene_num = 0)
     {
         isDDororo = true;
         contentText.text = "";
@@ -44,7 +45,8 @@ public class Dialogue : MonoBehaviour
         {
 
             speakerText.text = speaker;
-            
+            content = content.Replace("\\n", "\n");
+
             for(int i = 0 ; i < content.Length; i++)
             {
                 contentText.text += content[i];
@@ -111,7 +113,10 @@ public class Dialogue : MonoBehaviour
             contentText.text = "";
             gameObject.SetActive(false);
 
-
+            if(afterDialogueTrigger != null)
+            {
+                afterDialogueTrigger.SetTrigger("NextScene");
+            }
         }
 
     }

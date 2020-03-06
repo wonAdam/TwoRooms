@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScrollSelection_Mgr : MonoBehaviour
 {
     [SerializeField] Sprite[] ImageArr;
-    [SerializeField] B_3_Answer b_3_Answer;
+    [SerializeField] B_3_Answer b_3_Answer = null;
     [SerializeField] public int imgIndex = 0;
 
     //private void Update()
@@ -53,7 +53,9 @@ public class ScrollSelection_Mgr : MonoBehaviour
             }
             
             gameObject.GetComponent<Image>().sprite = ImageArr[imgIndex];
-            b_3_Answer.CheckIfIsAnswer();
+
+            if(b_3_Answer != null)
+                b_3_Answer.CheckIfIsAnswer();
         }
     }
 }
