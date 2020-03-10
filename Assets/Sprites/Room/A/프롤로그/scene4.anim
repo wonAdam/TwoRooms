@@ -318,7 +318,7 @@ AnimationClip:
     intParameter: 3
     messageOptions: 0
   - time: 0.083333336
-    functionName: TryToOpenDoor
+    functionName: TryToOpenDoorLeft
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -468,8 +468,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.7998047, y: 0}
+  m_SizeDelta: {x: 47.9, y: 59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &667550540
 MonoBehaviour:
@@ -593,11 +593,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677125090335278622, guid: a8a27604114afc7418a67d7d566a15d5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8683425385436894040, guid: a8a27604114afc7418a67d7d566a15d5,
         type: 3}
@@ -774,7 +769,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4a095675526c448449bac59eb63d0f8f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3949cf46576ffce4789f9be3d5272c10, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -939,27 +934,27 @@ MonoBehaviour:
   - {fileID: 910673846}
   - {fileID: 667550538}
   scene_1_DialogueCharacter:
-  - A
+  - "\uB098"
   scene_1_DialogueContent:
   - "\uC5EC\uAE34 \uC5B4\uB514\uC9C0...? \uB09C \uC65C \uC5EC\uAE30\uC5D0 \uB204\uC6CC
     \uC788\uB294\uAC70\uC9C0..?"
   scene_2_DialogueCharacter:
-  - A
+  - "\uB098"
   scene_2_DialogueContent:
   - "\uBB54\uAC00 \uAE30\uC5B5\uC774 \uB0A0 \uB4EF \uB9D0 \uB4EF \uBA38\uB9AC\uAC00
     \uC544\uD504\uB2E4.. \uC77C\uB2E8 \uC774 \uBC29\uC5D0\uC11C \uB098\uAC00\uC57C\uACA0\uC5B4."
   scene_4_DialogueCharacter:
-  - A
+  - "\uB098"
   scene_4_DialogueContent:
   - "\uC544\uB2C8 \uC65C \uBC29\uBB38\uC774 \uC5F4\uB9AC\uC9C0\uAC00 \uC54A\uB294\uAC70\uC57C??
     \uC124\uB9C8 \uB098 \uAC10\uAE08\uB41C\uAC74\uAC00?"
   scene_5_DialogueCharacter:
-  - A
+  - "\uB098"
   scene_5_DialogueContent:
   - "\uAC70\uAE30 \uB204\uAD6C \uC5C6\uC5B4\uC694?!!!!"
   scene_6_DialogueCharacter:
   - ???
-  - A
+  - "\uB098"
   - ???
   scene_6_DialogueContent:
   - "\uD639\uC2DC \uAC70\uAE30\uB3C4 \uB204\uAD6C \uC788\uB098\uC694...?"

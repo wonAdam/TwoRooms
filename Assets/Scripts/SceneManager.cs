@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class SceneManager : MonoBehaviour
 {
     [SerializeField] public GameObject[] RoomPanel;
     [SerializeField] GameObject[] CloseUpPanel;
     [SerializeField] GameObject dialoguePanel;
+    [SerializeField] Image fadeInOut;
 
 
     [SerializeField] GameObject[] Level1OFF;
@@ -18,7 +21,8 @@ public class SceneManager : MonoBehaviour
     [SerializeField] GameObject[] Level3ON;
     [SerializeField] GameObject[] Level4OFF;
     [SerializeField] GameObject[] Level4ON;
-
+    [Range(0f,3f)] [SerializeField] float fadeInSeconds = 1.5f;
+    [Range(0f,3f)] [SerializeField] float fadeInWaitSeconds = 1f;
 
 
     public int currentWallIndex = 0;
@@ -34,8 +38,19 @@ public class SceneManager : MonoBehaviour
         Initialize_Room(currentWallIndex);
     }
 
+    IEnumerator Initialization_FadeIn()
+    {
+        fadeInOut.gameObject.SetActive(true);
+        fadeInOut.color = new Color(0f,0f,0f,1f);
+        yield return new WaitForSeconds(fadeInWaitSeconds);
+        fadeInOut.DOFade(0f, fadeInSeconds);
+        yield return new WaitForSeconds(fadeInSeconds);
+        fadeInOut.gameObject.SetActive(false);
+    }
+
     private void Initialize_Room(int startWallIndex)
     {
+        StartCoroutine(Initialization_FadeIn());
         Set_Room_Panel(currentWallIndex);
 
         for(int i = 0; i < CloseUpPanel.Length; i++)

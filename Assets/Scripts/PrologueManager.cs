@@ -96,9 +96,14 @@ public class PrologueManager : MonoBehaviour
 
         DialogueTrigger(param, 6);
     }
-    public void TryToOpenDoor()
+    public void TryToOpenDoorLeft()
     {
         scenes[3].transform.DOPunchPosition(new Vector3(-100,-100,0), 1f, 10, 0f);
+    }
+
+    public void TryToOpenDoorRight()
+    {
+        scenes[3].transform.DOPunchPosition(new Vector3(100,-100,0), 1f, 10, 0f);
     }
 
     public void KnockTheDoorHard()
@@ -119,8 +124,8 @@ public class PrologueManager : MonoBehaviour
         scenes[5].GetComponent<Image>().color = new Color(0f,0f,0f,1f);
     }
 
-    public void LoadToARoom()
+    public void LoadToRoom(string scene)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("A_Room_Scene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
     }
 }

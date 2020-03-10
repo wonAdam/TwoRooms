@@ -9,15 +9,22 @@ public class Dialogue : MonoBehaviour
     [SerializeField] Text speakerText;
     [SerializeField] Text contentText;
     [SerializeField] float delaySec = 0.1f;
-
+    [SerializeField] AudioClip[] audioClips;
+ 
     public bool isDialogueing = false;
     public bool isDDororo = false;
     public List<string> speakersBuffer;
     public List<string> contentsBuffer;
     [SerializeField] Animator afterDialogueTrigger = null;
 
-    public void StartDialogue(List<KeyValuePair<string, string>> speakerNcontents, int scene_num = 0)
+    public void StartDialogue(List<KeyValuePair<string, string>> speakerNcontents, int audioClips_index = 0)
     {
+        var closeUps = FindObjectsOfType<CloseUp>();
+        for(int i = 0 ; i < closeUps.Length; i++)
+        {
+            Debug.Log(closeUps[i].gameObject.name);
+            closeUps[i].enabled = false;
+        }
         StopAllCoroutines();
         speakersBuffer.Clear();
         contentsBuffer.Clear();
@@ -35,11 +42,13 @@ public class Dialogue : MonoBehaviour
     }
 
 
-    private IEnumerator Dialogue_Coroutine(string speaker, string content, int scene_num = 0)
+    private IEnumerator Dialogue_Coroutine(string speaker, string content, int audioClips_index = 0)
     {
         isDDororo = true;
         contentText.text = "";
         speakerText.text = "";
+        GetComponent<AudioSource>().clip = audioClips[audioClips_index];
+        GetComponent<AudioSource>().Play();
 
         while(true)
         {
@@ -59,12 +68,13 @@ public class Dialogue : MonoBehaviour
             contentsBuffer.RemoveAt(0);
 
             if(speakersBuffer.Count == 0)
-            {
-
+            {              
+                
                 isDialogueing = false;
 
             }
 
+            GetComponent<AudioSource>().Pause();
             isDDororo = false;
             break;
 
@@ -77,6 +87,8 @@ public class Dialogue : MonoBehaviour
         
         if(isDialogueing == true)
         {
+
+            GetComponent<AudioSource>().Pause();
 
             if(isDDororo == true)
             {
@@ -112,6 +124,12 @@ public class Dialogue : MonoBehaviour
             speakerText.text = "";
             contentText.text = "";
             gameObject.SetActive(false);
+
+            var closeUps = FindObjectsOfType<CloseUp>();
+            for(int i = 0 ; i < closeUps.Length; i++)
+            {
+                closeUps[i].enabled = true;
+            }                
 
             if(afterDialogueTrigger != null)
             {
