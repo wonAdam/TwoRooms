@@ -445,8 +445,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 224539781}
-        m_MethodName: OnClick_Btn
+      - m_Target: {fileID: 8348246855389362205}
+        m_MethodName: OnClick_Keypad
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1537,8 +1537,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 224539781}
-        m_MethodName: OnClick_Btn
+      - m_Target: {fileID: 8348246855389362205}
+        m_MethodName: OnClick_Keypad
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1841,8 +1841,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 224539781}
-        m_MethodName: OnClick_Btn
+      - m_Target: {fileID: 8348246855389362205}
+        m_MethodName: OnClick_Keypad
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3297,8 +3297,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 224539781}
-        m_MethodName: OnClick_Btn
+      - m_Target: {fileID: 8348246855389362205}
+        m_MethodName: OnClick_Keypad
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3448,8 +3448,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 224539781}
-        m_MethodName: OnClick_Btn
+      - m_Target: {fileID: 8348246855389362205}
+        m_MethodName: OnClick_Keypad
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3599,8 +3599,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 224539781}
-        m_MethodName: OnClick_Btn
+      - m_Target: {fileID: 8348246855389362205}
+        m_MethodName: OnClick_Keypad
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3750,8 +3750,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 224539781}
-        m_MethodName: OnClick_Btn
+      - m_Target: {fileID: 8348246855389362205}
+        m_MethodName: OnClick_Keypad
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5035,8 +5035,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 224539781}
-        m_MethodName: OnClick_Btn
+      - m_Target: {fileID: 8348246855389362205}
+        m_MethodName: OnClick_Keypad
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5186,8 +5186,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 224539781}
-        m_MethodName: OnClick_Btn
+      - m_Target: {fileID: 8348246855389362205}
+        m_MethodName: OnClick_Keypad
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12770,7 +12770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2756361053946755908
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13783,7 +13783,6 @@ GameObject:
   - component: {fileID: 1233377441492769204}
   - component: {fileID: 4194175137618932071}
   - component: {fileID: 2044263726787977345}
-  - component: {fileID: 224539781}
   m_Layer: 10
   m_Name: Keypad
   m_TagString: Untagged
@@ -13870,23 +13869,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 900, y: 984.9, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &224539781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2864159051093963587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 643ef74133f71d14bae8f06b5812c33e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KeypadBtn: []
-  Answer: 0000
-  lengthOfAnswer: 4
-  Buffer: 
-  BufferLength: 0
 --- !u!1 &2890033838251186911
 GameObject:
   m_ObjectHideFlags: 0
@@ -17658,8 +17640,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 224539781}
-        m_MethodName: OnClick_Btn
+      - m_Target: {fileID: 8348246855389362205}
+        m_MethodName: OnClick_Keypad
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21492,6 +21474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1566377431142112301}
   - component: {fileID: 5521998470053112062}
+  - component: {fileID: 8348246855389362205}
   - component: {fileID: 8869172149868384559}
   m_Layer: 5
   m_Name: a_DoorKeypadPanel
@@ -21531,6 +21514,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5844630969093863094}
   m_CullTransparentMesh: 0
+--- !u!114 &8348246855389362205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5844630969093863094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289a9c1939f093f4296472871c1f83f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  answer: 0928
+  FadeInOut: {fileID: 4807065015214048700}
+  doorOpenSound: {fileID: 0}
+  buffer: 
 --- !u!114 &8869172149868384559
 MonoBehaviour:
   m_ObjectHideFlags: 0
