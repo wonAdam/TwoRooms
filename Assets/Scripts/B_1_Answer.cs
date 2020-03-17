@@ -41,11 +41,11 @@ public class B_1_Answer : MonoBehaviour
         _Room_d.Panel_to_CloseUp[1] = _AfterAnswer;
         FindObjectOfType<GameManager>().GetComponent<AudioSource>().UnPause();
         FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(0.15f, 2f);
-        gameObject.SetActive(false);
 
         _FadeInOut.GetComponent<Image>().DOFade(0f, 0.5f);
         yield return new WaitForSeconds(0.5f);
         _FadeInOut.SetActive(false);
+        gameObject.SetActive(false);
     }
 
 

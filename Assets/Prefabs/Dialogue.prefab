@@ -65,8 +65,7 @@ MonoBehaviour:
   speakerText: {fileID: 776254094059291073}
   contentText: {fileID: 1272106769397373856}
   delaySec: 0.03
-  audioClips:
-  - {fileID: 8300000, guid: 3536572dcae0e4cd9849ca78dc1addba, type: 3}
+  audioClips: []
   isDialogueing: 0
   isDDororo: 0
   speakersBuffer: []

@@ -47,8 +47,11 @@ public class Dialogue : MonoBehaviour
         isDDororo = true;
         contentText.text = "";
         speakerText.text = "";
-        GetComponent<AudioSource>().clip = audioClips[audioClips_index];
-        GetComponent<AudioSource>().Play();
+        if(audioClips.Length > 0)
+        {
+            GetComponent<AudioSource>().clip = audioClips[audioClips_index];
+            GetComponent<AudioSource>().Play();
+        }
 
         while(true)
         {
@@ -74,7 +77,10 @@ public class Dialogue : MonoBehaviour
 
             }
 
-            GetComponent<AudioSource>().Pause();
+            if(GetComponent<AudioSource>().isPlaying)
+            {            
+                GetComponent<AudioSource>().Pause();
+            }
             isDDororo = false;
             break;
 
@@ -87,8 +93,10 @@ public class Dialogue : MonoBehaviour
         
         if(isDialogueing == true)
         {
-
-            GetComponent<AudioSource>().Pause();
+            if(GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().Pause();
+            }
 
             if(isDDororo == true)
             {
