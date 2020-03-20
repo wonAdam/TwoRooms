@@ -32,6 +32,8 @@ public class B_1_Answer : MonoBehaviour
 
     IEnumerator SetForAfterAnswer()
     {
+        AutoSave();
+
         GetComponent<AudioSource>().PlayOneShot(click);
         _FadeInOut.SetActive(true);
         _FadeInOut.GetComponent<Image>().DOFade(1f, 1f);
@@ -46,6 +48,27 @@ public class B_1_Answer : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         _FadeInOut.SetActive(false);
         gameObject.SetActive(false);
+    }
+
+    public void LoadThisUnlocked()
+    {
+        _Room_d.Panel_to_CloseUp[1] = _AfterAnswer;
+    }
+
+    [SerializeField] GameObject autoSaveUI = null;
+
+    private void AutoSave()
+    {
+        if(autoSaveUI != null)
+        {
+            autoSaveUI.SetActive(true);
+            autoSaveUI.GetComponent<Animator>().SetTrigger("Save");
+        }
+
+        if(PlayerPrefs.GetInt("B", 99) < 1)
+        {
+            PlayerPrefs.SetInt("B", 1);
+        }
     }
 
 

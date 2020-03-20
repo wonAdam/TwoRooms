@@ -27,6 +27,9 @@ public class Final_DoorKeypad : MonoBehaviour
 
     IEnumerator LoadToEnding()
     {
+
+        PlayerPrefs.DeleteAll();
+
         FadeInOut.SetActive(true);
         FadeInOut.GetComponent<Image>().DOFade(1f, 2f);
         yield return new WaitForSeconds(2f);

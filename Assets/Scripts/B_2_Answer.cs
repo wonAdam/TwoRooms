@@ -19,6 +19,9 @@ public class B_2_Answer : MonoBehaviour
 
             if(input == answer)
             {
+
+                AutoSave();
+                
                 Debug.Log("Correct");
                 laptopSidePanel.Panel_to_CloseUp[0] = afterAnswerLaptop;
                 afterAnswerLaptop.SetActive(true);
@@ -32,4 +35,25 @@ public class B_2_Answer : MonoBehaviour
         Debug.Log("Wrong");
 
     }
+
+    public void LoadThisUnlocked()
+    {
+        laptopSidePanel.Panel_to_CloseUp[0] = afterAnswerLaptop;
+    }
+
+    [SerializeField] GameObject autoSaveUI = null;
+
+    private void AutoSave()
+    {
+        if(autoSaveUI != null)
+        {
+            autoSaveUI.SetActive(true);
+            autoSaveUI.GetComponent<Animator>().SetTrigger("Save");
+        }
+
+        if(PlayerPrefs.GetInt("B", 99) < 2)
+        {
+            PlayerPrefs.SetInt("B", 2);
+        }
+    }    
 }

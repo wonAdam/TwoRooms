@@ -51,10 +51,35 @@ public class B_3_Answer : MonoBehaviour
 
     private void SetForAfterAnswer()
     {
+
+        AutoSave();
+
         previousPanel.GetComponent<CloseUp>().Panel_to_CloseUp[0] = afterAnswerPanel;
         afterAnswerPanel.SetActive(true);
         previousPanel = null;
         gameObject.SetActive(false);
     }
+
+    public void LoadThisUnlocked()
+    {
+        previousPanel.GetComponent<CloseUp>().Panel_to_CloseUp[0] = afterAnswerPanel;
+        previousPanel = null;
+    }
+
+    [SerializeField] GameObject autoSaveUI = null;
+
+    private void AutoSave()
+    {
+        if(autoSaveUI != null)
+        {
+            autoSaveUI.SetActive(true);
+            autoSaveUI.GetComponent<Animator>().SetTrigger("Save");
+        }
+
+        if(PlayerPrefs.GetInt("B", 99) < 3)
+        {
+            PlayerPrefs.SetInt("B", 3);
+        }
+    }    
 
 }

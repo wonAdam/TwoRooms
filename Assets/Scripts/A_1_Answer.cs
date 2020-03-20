@@ -25,6 +25,9 @@ public class A_1_Answer : MonoBehaviour
         digitalClock.minTenStartNumIndex == answer3 &&
         digitalClock.minOneStartNumIndex == answer4)
         {
+
+            AutoSave();
+
             FindObjectOfType<GameManager>().GetComponent<AudioSource>().UnPause();
             FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(0.15f, 2f);
             _AfterAnswer.SetActive(true);
@@ -43,4 +46,30 @@ public class A_1_Answer : MonoBehaviour
 
         }
     }
+
+    public void LoadThisUnlocked()
+    {
+        for(int i = 0 ; i < englishPoemTouch.Length; i++)
+        {
+            englishPoemTouch[i].SetActive(true);
+        }  
+        _Room_c.Panel_to_CloseUp[1] = _AfterAnswer;
+
+    }
+
+    [SerializeField] GameObject autoSaveUI = null;
+
+    private void AutoSave()
+    {
+        if(autoSaveUI != null)
+        {
+            autoSaveUI.SetActive(true);
+            autoSaveUI.GetComponent<Animator>().SetTrigger("Save");
+        }
+
+        if(PlayerPrefs.GetInt("A", 99) < 1)
+        {
+            PlayerPrefs.SetInt("A", 1);
+        }
+    }    
 }

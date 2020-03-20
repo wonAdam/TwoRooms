@@ -30,11 +30,36 @@ public class A_3_Answer : MonoBehaviour
     private void SetForAfterAnswer()
     {
         
+        AutoSave();
+
         previousPanel.GetComponent<CloseUp>().Panel_to_CloseUp[0] = afterAnswerPanel;
         afterAnswerPanel.SetActive(true);
         GetComponent<CloseUp>().PreviousPanel = null;
         gameObject.SetActive(false);
     }
 
+    public void LoadThisUnlocked()
+    {
+        previousPanel.GetComponent<CloseUp>().Panel_to_CloseUp[0] = afterAnswerPanel;
+        GetComponent<CloseUp>().PreviousPanel = null;
+    }
 
+
+    [SerializeField] GameObject autoSaveUI = null;
+
+    private void AutoSave()
+    {
+        if(autoSaveUI != null)
+        {
+            autoSaveUI.SetActive(true);
+            autoSaveUI.GetComponent<Animator>().SetTrigger("Save");
+        }
+
+        if(PlayerPrefs.GetInt("A", 99) < 3)
+        {
+            PlayerPrefs.SetInt("A", 3);
+        }
+    }    
+
+    
 }

@@ -13,20 +13,20 @@ public class SceneManager : MonoBehaviour
     [SerializeField] Image fadeInOut;
 
 
-    [SerializeField] GameObject[] Level1OFF;
-    [SerializeField] GameObject[] Level1ON;
-    [SerializeField] GameObject[] Level2OFF;
-    [SerializeField] GameObject[] Level2ON;
-    [SerializeField] GameObject[] Level3OFF;
-    [SerializeField] GameObject[] Level3ON;
-    [SerializeField] GameObject[] Level4OFF;
-    [SerializeField] GameObject[] Level4ON;
     [Range(0f,3f)] [SerializeField] float fadeInSeconds = 1.5f;
     [Range(0f,3f)] [SerializeField] float fadeInWaitSeconds = 1f;
 
+    [SerializeField] A_1_Answer a_1_Answer = null;
+    [SerializeField] A_2_Answer a_2_Answer = null;
+    [SerializeField] A_3_Answer a_3_Answer = null;
+    [SerializeField] B_1_Answer b_1_Answer = null;
+    [SerializeField] B_2_Answer b_2_Answer = null;
+    [SerializeField] B_3_Answer b_3_Answer = null;
 
     public int currentWallIndex = 0;
 
+    enum Room { A, B };
+    [SerializeField] Room thisRoom;
 
     void Awake()
     {
@@ -35,7 +35,8 @@ public class SceneManager : MonoBehaviour
 
     void Start()
     {
-        Initialize_Room(currentWallIndex);
+       
+        Initialize_Room(currentWallIndex);        
     }
 
     IEnumerator Initialization_FadeIn()
@@ -57,57 +58,67 @@ public class SceneManager : MonoBehaviour
         {
             CloseUpPanel[i].SetActive(false);
         }
+
+
+        //Load
+        if(thisRoom == Room.A)
+        {
+            if(PlayerPrefs.GetInt("A", 99) < 4)
+            {
+                //todo 불러오기
+                A_LevelLoad(PlayerPrefs.GetInt("A", 99));
+            }
+            else
+            {
+                PlayerPrefs.SetInt("A", 0);
+            }
+        }
+        else if(thisRoom == Room.B)
+        {
+            if(PlayerPrefs.GetInt("B", 99) < 4)
+            {
+                //불러오기
+                B_LevelLoad(PlayerPrefs.GetInt("B", 99));
+            }
+            else
+            {
+                PlayerPrefs.SetInt("B", 0);
+            }
+        }
+
+
     }
 
-    private void LevelLoad(int level)
+    public void A_LevelLoad(int level)
     {
-        if(level == 1)
+        if(level >= 1)
         {
-            for(int i = 0; i < Level1OFF.Length; i++)
-            {
-                Level1OFF[i].SetActive(false);
-            }
-            for(int i = 0; i < Level1ON.Length; i++)
-            {
-                Level1ON[i].SetActive(true);
-            }
+            a_1_Answer.LoadThisUnlocked();
         }
-        else if(level == 2)
+        if(level >= 2)
         {
-            for(int i = 0; i < Level2OFF.Length; i++)
-            {
-                Level2OFF[i].SetActive(false);
-            }
-            for(int i = 0; i < Level2ON.Length; i++)
-            {
-                Level2ON[i].SetActive(true);
-            }
+            a_2_Answer.LoadThisUnlocked();
         }
-        else if(level == 3)
+        if(level >= 3)
         {
-            for(int i = 0; i < Level3OFF.Length; i++)
-            {
-                Level3OFF[i].SetActive(false);
-            }
-            for(int i = 0; i < Level3ON.Length; i++)
-            {
-                Level3ON[i].SetActive(true);
-            }
+            a_3_Answer.LoadThisUnlocked();
         }
-        else if(level == 4)
-        {
-            for(int i = 0; i < Level4OFF.Length; i++)
-            {
-                Level4OFF[i].SetActive(false);
-            }
-            for(int i = 0; i < Level4ON.Length; i++)
-            {
-                Level4ON[i].SetActive(true);
-            }
-        }
-
     }
-
+    public void B_LevelLoad(int level)
+    {
+        if(level >= 1)
+        {
+            b_1_Answer.LoadThisUnlocked();
+        }
+        if(level >= 2)
+        {
+            b_2_Answer.LoadThisUnlocked();
+        }
+        if(level >= 3)
+        {
+            b_3_Answer.LoadThisUnlocked();
+        }
+    }
 
     private void Set_Room_Panel(int index){
         for(int i = 0; i < RoomPanel.Length; i++){
