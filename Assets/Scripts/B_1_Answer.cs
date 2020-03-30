@@ -18,7 +18,6 @@ public class B_1_Answer : MonoBehaviour
     [SerializeField] GameObject _FadeInOut;
     [SerializeField] GameObject _AfterAnswer;
     [SerializeField] CloseUp _Room_d;
-    [SerializeField] AudioClip click;
 
     public void CheckAnswer(){
         if(first.startIndex == answer1 && 
@@ -34,7 +33,6 @@ public class B_1_Answer : MonoBehaviour
     {
         AutoSave();
 
-        GetComponent<AudioSource>().PlayOneShot(click);
         _FadeInOut.SetActive(true);
         _FadeInOut.GetComponent<Image>().DOFade(1f, 1f);
         yield return new WaitForSeconds(1f);
@@ -62,14 +60,18 @@ public class B_1_Answer : MonoBehaviour
         if(autoSaveUI != null)
         {
             autoSaveUI.SetActive(true);
-            autoSaveUI.GetComponent<Animator>().SetTrigger("Save");
+            Invoke("DisableSaveUI", 3f);
         }
 
-        if(PlayerPrefs.GetInt("B", 99) < 1)
+        if(FindObjectOfType<SaveManager>().Load().level < 1)
         {
-            PlayerPrefs.SetInt("B", 1);
+            FindObjectOfType<SaveManager>().Save('B', 1);
         }
     }
+    private void DisableSaveUI()
+    {
+        autoSaveUI.SetActive(false);
+    }    
 
 
 }

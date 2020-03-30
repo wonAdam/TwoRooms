@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class A_3_Answer : MonoBehaviour
 {
@@ -8,6 +10,12 @@ public class A_3_Answer : MonoBehaviour
     [SerializeField] GameObject afterAnswerPanel;
     [SerializeField] GameObject previousPanel;
     public string buffer = "";
+
+    public SFXManager SFXManager;
+    void Start()
+    {
+        SFXManager = FindObjectOfType<SFXManager>();
+    }
 
 
     public void CheckIfIsAnswer()
@@ -17,24 +25,37 @@ public class A_3_Answer : MonoBehaviour
             if(answer == buffer)
             {
                 Debug.Log("Correct");
-                SetForAfterAnswer();
+                StartCoroutine(SetForAfterAnswer());
             }
             else
             {
                 Debug.Log("Wrong");
+                SFXManager.PlaySFX(SFXManager.KeypadWrong);
             }
             buffer = "";
         }
     }
+    [SerializeField] GameObject _FadeInOut;
 
-    private void SetForAfterAnswer()
+    private IEnumerator SetForAfterAnswer()
     {
         
         AutoSave();
 
+        SFXManager.PlaySFX(SFXManager.VaultOpen);
+        
+        _FadeInOut.SetActive(true);
+        _FadeInOut.GetComponent<Image>().DOFade(1f, 1f);
+        yield return new WaitForSeconds(1f);
+        
         previousPanel.GetComponent<CloseUp>().Panel_to_CloseUp[0] = afterAnswerPanel;
         afterAnswerPanel.SetActive(true);
         GetComponent<CloseUp>().PreviousPanel = null;
+
+        _FadeInOut.GetComponent<Image>().DOFade(0f, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        _FadeInOut.SetActive(false);
+
         gameObject.SetActive(false);
     }
 
@@ -52,13 +73,17 @@ public class A_3_Answer : MonoBehaviour
         if(autoSaveUI != null)
         {
             autoSaveUI.SetActive(true);
-            autoSaveUI.GetComponent<Animator>().SetTrigger("Save");
+            Invoke("DisableSaveUI", 3f);
         }
 
-        if(PlayerPrefs.GetInt("A", 99) < 3)
+        if(FindObjectOfType<SaveManager>().Load().level < 3)
         {
-            PlayerPrefs.SetInt("A", 3);
+            FindObjectOfType<SaveManager>().Save('A', 3);
         }
+    }    
+    private void DisableSaveUI()
+    {
+        autoSaveUI.SetActive(false);
     }    
 
     

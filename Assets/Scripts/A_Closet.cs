@@ -8,7 +8,12 @@ public class A_Closet : MonoBehaviour
     [SerializeField] GameObject OpenedPanel;
     [SerializeField] GameObject ClosetClosed;
     [SerializeField] int ClosetPanelIndex;
-
+    [SerializeField] bool isOpened;
+    public SFXManager SFXManager;
+    void Start()
+    {
+        SFXManager = FindObjectOfType<SFXManager>();
+    }
 
     void Update()
     {
@@ -33,6 +38,11 @@ public class A_Closet : MonoBehaviour
                 if(Physics.Raycast(ray, out hit))
                 {
                     if(hit.collider.name == ClosetClosed.name){
+                        if(isOpened)
+                            SFXManager.PlaySFX(SFXManager.ClosetOpen);
+                        else
+                            SFXManager.PlaySFX(SFXManager.ClosetClose);
+
                         sceneManager.RoomPanel[ClosetPanelIndex] = OpenedPanel;
                         gameObject.SetActive(false);
                         OpenedPanel.SetActive(true);

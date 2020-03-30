@@ -36,7 +36,7 @@ public class DigitalClock : MonoBehaviour
             Times[0].GetComponent<Image>().sprite = Nums[hourTenStartNumIndex];
         }
 
-        a_1_Answer.CheckAnswer();
+        a_1_Answer.CheckAnswerTrigger();
     }
 
     public void OnClick_HourOne()
@@ -52,7 +52,7 @@ public class DigitalClock : MonoBehaviour
             Times[1].GetComponent<Image>().sprite = Nums[hourOneStartNumIndex];
         }
 
-        a_1_Answer.CheckAnswer();
+        a_1_Answer.CheckAnswerTrigger();
     }
 
     public void OnClick_MinTen()
@@ -68,7 +68,7 @@ public class DigitalClock : MonoBehaviour
             Times[2].GetComponent<Image>().sprite = Nums[minTenStartNumIndex];
         }
 
-        a_1_Answer.CheckAnswer();
+        a_1_Answer.CheckAnswerTrigger();
     }
 
     public void OnClick_MinOne()
@@ -84,6 +84,6 @@ public class DigitalClock : MonoBehaviour
             Times[3].GetComponent<Image>().sprite = Nums[minOneStartNumIndex];
         }
 
-        a_1_Answer.CheckAnswer();
+        a_1_Answer.CheckAnswerTrigger();
     }
 }

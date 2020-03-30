@@ -25,6 +25,8 @@ public class SceneManager : MonoBehaviour
 
     public int currentWallIndex = 0;
 
+    public SaveManager saveManager;
+
     enum Room { A, B };
     [SerializeField] Room thisRoom;
 
@@ -35,7 +37,7 @@ public class SceneManager : MonoBehaviour
 
     void Start()
     {
-       
+        saveManager = FindObjectOfType<SaveManager>();
         Initialize_Room(currentWallIndex);        
     }
 
@@ -61,29 +63,19 @@ public class SceneManager : MonoBehaviour
 
 
         //Load
-        if(thisRoom == Room.A)
+        if(saveManager.IsSaveFile())
         {
-            if(PlayerPrefs.GetInt("A", 99) < 4)
-            {
-                //todo 불러오기
-                A_LevelLoad(PlayerPrefs.GetInt("A", 99));
-            }
+            if(thisRoom == Room.A)
+                A_LevelLoad(saveManager.Load().level);
             else
-            {
-                PlayerPrefs.SetInt("A", 0);
-            }
+                B_LevelLoad(saveManager.Load().level);
         }
-        else if(thisRoom == Room.B)
+        else
         {
-            if(PlayerPrefs.GetInt("B", 99) < 4)
-            {
-                //불러오기
-                B_LevelLoad(PlayerPrefs.GetInt("B", 99));
-            }
+            if(thisRoom == Room.A)
+                saveManager.Save('A', 0);
             else
-            {
-                PlayerPrefs.SetInt("B", 0);
-            }
+                saveManager.Save('B', 0);
         }
 
 

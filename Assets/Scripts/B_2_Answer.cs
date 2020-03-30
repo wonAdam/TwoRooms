@@ -10,8 +10,16 @@ public class B_2_Answer : MonoBehaviour
     [SerializeField] GameObject afterAnswerLaptop;
 
 
-    //[SerializeField] GameObject _AfterAnswer;
-    //[SerializeField] CloseUp _Room_c;
+    public SFXManager SFXManager;
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    void Start()
+    {
+        SFXManager = FindObjectOfType<SFXManager>();
+    }
+
 
     public void CheckAnswer(string input){
         foreach(string answer in answers)
@@ -19,10 +27,10 @@ public class B_2_Answer : MonoBehaviour
 
             if(input == answer)
             {
-
                 AutoSave();
                 
                 Debug.Log("Correct");
+                SFXManager.PlaySFX(SFXManager.TurnOn);
                 laptopSidePanel.Panel_to_CloseUp[0] = afterAnswerLaptop;
                 afterAnswerLaptop.SetActive(true);
                 gameObject.SetActive(false);
@@ -48,12 +56,17 @@ public class B_2_Answer : MonoBehaviour
         if(autoSaveUI != null)
         {
             autoSaveUI.SetActive(true);
-            autoSaveUI.GetComponent<Animator>().SetTrigger("Save");
+            Invoke("DisableSaveUI", 3f);
         }
 
-        if(PlayerPrefs.GetInt("B", 99) < 2)
+        if(FindObjectOfType<SaveManager>().Load().level < 2)
         {
-            PlayerPrefs.SetInt("B", 2);
+            FindObjectOfType<SaveManager>().Save('B', 2);
         }
+    } 
+    private void DisableSaveUI()
+    {
+        autoSaveUI.SetActive(false);
     }    
+       
 }

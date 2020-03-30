@@ -16,7 +16,7 @@ public class B_3_Answer : MonoBehaviour
         for(int i = 0 ; i < btns.Length; i++)
         {
             // O 인데
-            if(btns[i].transform.GetComponentInChildren<ScrollSelection_Mgr>().imgIndex == 1)
+            if(btns[i].transform.GetComponentInChildren<ScrollSelection_Mgr>().imgIndex == 2)
             {
                 bool isAnswer = false;
                 for(int j = 0; j < answer.Length; j++)
@@ -73,13 +73,17 @@ public class B_3_Answer : MonoBehaviour
         if(autoSaveUI != null)
         {
             autoSaveUI.SetActive(true);
-            autoSaveUI.GetComponent<Animator>().SetTrigger("Save");
+            Invoke("DisableSaveUI", 3f);
         }
 
-        if(PlayerPrefs.GetInt("B", 99) < 3)
+        if(FindObjectOfType<SaveManager>().Load().level < 3)
         {
-            PlayerPrefs.SetInt("B", 3);
+            FindObjectOfType<SaveManager>().Save('B', 3);
         }
+    }    
+    private void DisableSaveUI()
+    {
+        autoSaveUI.SetActive(false);
     }    
 
 }

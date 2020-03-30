@@ -12,6 +12,13 @@ public class DragDetectorHor : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     public float startXPos;
     public float endXPos;
 
+    public SFXManager SFXManager;
+
+    void Start()
+    {
+        SFXManager = FindObjectOfType<SFXManager>();
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         startXPos = eventData.position.x;
@@ -28,7 +35,7 @@ public class DragDetectorHor : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             {
                 img.GetComponent<Number>().NumInc();
             }
-
+            SFXManager.PlaySFX(SFXManager.LockOpen2);
             //b_1_Answer.CheckAnswer();
             
             return;
@@ -39,7 +46,7 @@ public class DragDetectorHor : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             {
                 img.GetComponent<Number>().NumDec();
             }
-
+            SFXManager.PlaySFX(SFXManager.LockOpen2);
             //b_1_Answer.CheckAnswer();
 
             return;

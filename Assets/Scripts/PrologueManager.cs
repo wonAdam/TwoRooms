@@ -19,6 +19,12 @@ public class PrologueManager : MonoBehaviour
     [TextArea] [SerializeField] List<string> scene_5_DialogueContent;
     [TextArea] [SerializeField] List<string> scene_6_DialogueCharacter;
     [TextArea] [SerializeField] List<string> scene_6_DialogueContent;    
+
+    public SFXManager SFXManager;
+    void Start()
+    {
+        SFXManager = FindObjectOfType<SFXManager>();
+    }
     public void Scene1DialogueStart()
     {
         List<KeyValuePair<string, string>> param = new List<KeyValuePair<string, string>>();
@@ -32,6 +38,11 @@ public class PrologueManager : MonoBehaviour
 
         DialogueTrigger(param, 1);
     }
+
+    // public void DoorTryToOpenSFX()
+    // {
+    //     SFXManager.PlaySFX(SFXManager.DoorOpen);
+    // }
 
     public void SetSceneActive(int i)
     {

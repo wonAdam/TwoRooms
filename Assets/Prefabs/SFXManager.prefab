@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4171575763027904188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4171575763027904191}
+  - component: {fileID: 4171575763027904190}
+  - component: {fileID: 4171575763027904189}
+  m_Layer: 0
+  m_Name: SFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4171575763027904191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171575763027904188}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4171575763027904190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171575763027904188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e10a4c209966944fadcd4132aa9e90e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlanketFluff: {fileID: 8300000, guid: caa2d38aeb6d53947975cb72ccf37aed, type: 3}
+  BlanketPut: {fileID: 8300000, guid: ac5f556f6a65e3c4f82587d8b96153f8, type: 3}
+  BookClose: {fileID: 8300000, guid: 54d2a667edbc3d14e928e80417d7d48b, type: 3}
+  BookOpen: {fileID: 8300000, guid: d4fe4eccbd413ab46bf4ce543965034d, type: 3}
+  BookPut: {fileID: 8300000, guid: 37c7f78bb6295e347a35a2955540563c, type: 3}
+  BoxScratch: {fileID: 8300000, guid: 685df97d46f66574da76099730e97efd, type: 3}
+  ClosetClose: {fileID: 8300000, guid: 647b75040b32e6c4d9df41175101803c, type: 3}
+  ClosetOpen: {fileID: 8300000, guid: 8b8f6a95539173e49b0b4fa21d44a1d2, type: 3}
+  DigitalClockClick: {fileID: 8300000, guid: 5f5295c952d31d5438cb511179bcc2f2, type: 3}
+  DigitalClockCrash: {fileID: 8300000, guid: 9768d750051a1ed4d9890cda555ec2e3, type: 3}
+  DoorOpen: {fileID: 8300000, guid: f9863dde4cf4a744bb3048ff46518bd4, type: 3}
+  DrawerOpen: {fileID: 8300000, guid: 48bc2c0af9968164a9d96ada74768163, type: 3}
+  KeypadClick: {fileID: 8300000, guid: a62087300a3937540aa834dc42808d31, type: 3}
+  KeypadPass: {fileID: 8300000, guid: 09deb6092c713c2469b2572070b32ddc, type: 3}
+  KeypadWrong: {fileID: 8300000, guid: 5651663475c35f1489a42f3c91472dc9, type: 3}
+  LockOpen1: {fileID: 8300000, guid: bfb7239998f127744b2f7114f17386a3, type: 3}
+  LockOpen2: {fileID: 8300000, guid: 40df5bc34ddf1c242ac0ec5e9cd77764, type: 3}
+  LockOpen3: {fileID: 8300000, guid: 73623a1cd46bbc746af95aeb64174810, type: 3}
+  Marker: {fileID: 8300000, guid: 68e6394facfbcaa47b9905fdc2a0bed0, type: 3}
+  PaperFlip1: {fileID: 8300000, guid: a4b1119f4774d204ea23f481af509abe, type: 3}
+  PaperFlip2: {fileID: 8300000, guid: b3dd01106a33eda4f8ecaf90f7ed5937, type: 3}
+  PrinceBoxOpen: {fileID: 8300000, guid: e62c01071342e3e4b82986e339c859f6, type: 3}
+  TurnOn: {fileID: 8300000, guid: 0cb9fce848f43f64f9dde8beeb7460a1, type: 3}
+  VaultOpen: {fileID: 8300000, guid: 739c8872f1bd59f4195ebeeefb181fb2, type: 3}
+--- !u!82 &4171575763027904189
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171575763027904188}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

@@ -9,11 +9,18 @@ public class PaperFlip : MonoBehaviour
     [SerializeField] Transform februaryPaper;
     public bool isAnimating = false;
 
+
+    public SFXManager SFXManager;
+    void Start()
+    {
+        SFXManager = FindObjectOfType<SFXManager>();
+    }
+
     void OnMouseDown()
     {
     
         if(isAnimating == true) return;
-        
+        SFXManager.PlaySFX(SFXManager.PaperFlip1);
         animator.SetTrigger("Flip");
 
     }

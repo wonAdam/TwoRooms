@@ -7,16 +7,13 @@ using DG.Tweening;
 public class SaveLossMessage : MonoBehaviour
 {
 
-    [SerializeField] MenuManager menuManager;
-
-
     public void OpenWindow()
     {
         gameObject.transform.DOScale(new Vector3(1f,1f,1f), 0.3f);
     }
     public void OnClick_Yes()
     {
-        PlayerPrefs.DeleteAll();
+        FindObjectOfType<SaveManager>().DeleteSaveData();
         UnityEngine.SceneManagement.SceneManager.LoadScene("DescriptionScene");
     }
 

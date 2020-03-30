@@ -11,6 +11,12 @@ public class DragDetector : MonoBehaviour, IBeginDragHandler, IEndDragHandler, I
 
     public float startYPos;
     public float endYPos;
+    public SFXManager SFXManager;
+
+    void Start()
+    {
+        SFXManager = FindObjectOfType<SFXManager>();
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -24,6 +30,7 @@ public class DragDetector : MonoBehaviour, IBeginDragHandler, IEndDragHandler, I
         //Drag  Down ->  Number needs to be increased
         if(startYPos - endYPos > 0)
         {
+            SFXManager.PlaySFX(SFXManager.LockOpen2);
             foreach (GameObject img in SameColImage)
             {
                 img.GetComponent<Number>().NumInc();
@@ -35,6 +42,7 @@ public class DragDetector : MonoBehaviour, IBeginDragHandler, IEndDragHandler, I
         }
         if (startYPos - endYPos < 0)
         {
+            SFXManager.PlaySFX(SFXManager.LockOpen2);
             foreach (GameObject img in SameColImage)
             {
                 img.GetComponent<Number>().NumDec();

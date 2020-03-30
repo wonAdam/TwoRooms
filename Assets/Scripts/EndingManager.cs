@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class EndingManager : MonoBehaviour
 {
     [SerializeField] Dialogue dialogue;
     [SerializeField] GameObject[] scenes;
     [SerializeField] GameObject whitePage;
+    public SFXManager SFXManager;
+    public EndingSound EndingSound;
 
     [TextArea] [SerializeField] List<string> scene_1_character;
     [TextArea] [SerializeField] List<string> scene_1_content;
@@ -44,6 +47,24 @@ public class EndingManager : MonoBehaviour
     [TextArea] [SerializeField] List<string> scene_19_character;
     [TextArea] [SerializeField] List<string> scene_19_content;   
 
+    void Start()
+    {
+        SFXManager = FindObjectOfType<SFXManager>();
+        EndingSound = FindObjectOfType<EndingSound>();
+    }
+    public void FadeOutBGM()
+    {
+        EndingSound.GetComponent<AudioSource>().DOFade(0f, 4f);
+    }
+    public void DoorOpenSFX()
+    {
+        SFXManager.PlaySFX(SFXManager.DoorOpen);
+    }
+
+    public void LoadToMain()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
     public void DialogueTrigger(List<KeyValuePair<string, string>> param, int audioclip = 0)
     {
 
