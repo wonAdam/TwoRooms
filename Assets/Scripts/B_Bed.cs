@@ -9,6 +9,12 @@ public class B_Bed : MonoBehaviour
     [SerializeField] GameObject BedClosed;
     [SerializeField] int BedPanelIndex;
 
+    SFXManager SFXManager;
+    [SerializeField] bool isPutScene;
+    void Start()
+    {
+        SFXManager = FindObjectOfType<SFXManager>();
+    }
 
     void Update()
     {
@@ -33,6 +39,11 @@ public class B_Bed : MonoBehaviour
                 if(Physics.Raycast(ray, out hit))
                 {
                     if(hit.collider.name == BedClosed.name){
+                        if(isPutScene)
+                            SFXManager.PlaySFX(SFXManager.BlanketFluff);
+                        else
+                            SFXManager.PlaySFX(SFXManager.BlanketPut);
+                            
                         sceneManager.RoomPanel[BedPanelIndex] = OpenedPanel;
                         gameObject.SetActive(false);
                         OpenedPanel.SetActive(true);
@@ -42,6 +53,23 @@ public class B_Bed : MonoBehaviour
 
 
             }
+        }
+
+        else if(Input.GetMouseButtonDown(0))
+        {
+                Debug.Log("Touch Detected");
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if(Physics.Raycast(ray, out hit))
+                {
+                    if(hit.collider.name == BedClosed.name){
+                        sceneManager.RoomPanel[BedPanelIndex] = OpenedPanel;
+                        gameObject.SetActive(false);
+                        OpenedPanel.SetActive(true);
+                    }
+
+                }
         }
     }
 

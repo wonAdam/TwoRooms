@@ -39,11 +39,14 @@ public class PrologueManager : MonoBehaviour
         DialogueTrigger(param, 1);
     }
 
-    // public void DoorTryToOpenSFX()
-    // {
-    //     SFXManager.PlaySFX(SFXManager.DoorOpen);
-    // }
-
+    public void DoorTryToOpenSFX()
+    {
+        SFXManager.PlaySFX(SFXManager.TryToOpenDoor);
+    }
+    public void DoorKnockSFX()
+    {
+        SFXManager.PlaySFX(SFXManager.DoorKnock);
+    }
     public void SetSceneActive(int i)
     {
         scenes[i].SetActive(true);

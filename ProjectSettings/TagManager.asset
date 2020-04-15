@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hint
+  - 9x9Changable
+  - TouchDetect
+  - Wall
   layers:
   - Default
   - TransparentFX

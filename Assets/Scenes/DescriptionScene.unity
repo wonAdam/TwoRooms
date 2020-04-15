@@ -1515,7 +1515,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 0.7
   m_Text: "\uAC8C\uC784\uC758 \uBCF8\uC5F0\uC758 \uC7AC\uBBF8\uB97C \uC704\uD574 \n\uD50C\uB808\uC774
-    \uC2DC\uAC04\uB3D9\uC548\uC740 \uC11C\uB85C\uC758 \uD654\uBA74\uC744 \uBCF4\uB294
+    \uC2DC\uAC04 \uB3D9\uC548\uC740 \uC11C\uB85C\uC758 \uD654\uBA74\uC744 \uBCF4\uB294
     \uAC83\uC740 \uCC38\uC544\uC8FC\uC138\uC694."
 --- !u!222 &1138584029
 CanvasRenderer:
@@ -2140,7 +2140,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2559,7 +2559,7 @@ MonoBehaviour:
   nextSceneName: A_Prologue
   StartPos: {x: 0, y: 0}
   closedSprite: {fileID: 0}
-  FixPos: {x: 367, y: -4}
+  FixPos: {x: 367, y: 0}
   FixScale: {x: 1.2, y: 1.2}
   Opened: {fileID: 21300000, guid: de4d4f088859bfd42a1a72abd2641efb, type: 3}
   door: {fileID: 1209459394}
@@ -3008,7 +3008,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 0.7
   m_Text: "\uB450 \uC0AC\uB78C\uC740 \uAC8C\uC784\uC5D0 \uB4E4\uC5B4\uAC00\uBA74 \n\uC11C\uB85C\uC758
-    \uD654\uBA74\uC744 \uBCF4\uC9C0\uC54A\uACE0 \n\uB300\uD654\uB85C\uB9CC \uBB38\uC81C\uB97C
+    \uD654\uBA74\uC744 \uBCF4\uC9C0 \uC54A\uACE0 \n\uB300\uD654\uB85C\uB9CC \uBB38\uC81C\uB97C
     \uD574\uACB0\uD574\uB098\uAC00\uC57C \uD569\uB2C8\uB2E4."
 --- !u!222 &2102252406
 CanvasRenderer:

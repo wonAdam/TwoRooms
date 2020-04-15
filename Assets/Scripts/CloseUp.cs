@@ -45,7 +45,83 @@ public class CloseUp : MonoBehaviour
     private void OnTouchDetected()
     {
 
-        if(Input.touchCount > 0)
+        if(Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if(Physics.Raycast(ray, out hit))
+            {
+                    Debug.Log(hit.collider.gameObject.name + "Hit Success");
+                    for(int i = 0 ; i < Panel_to_Touch.Length; i++){
+                        if(hit.collider.gameObject == Panel_to_Touch[i]) 
+                        {
+                            Panel_to_CloseUp[i].SetActive(true);
+
+                            Panel_to_Touch[i].GetComponent<OpenNextBook>()?.OpenNextBookFunc();
+
+                            //BGM
+                            if(Panel_to_CloseUp[i].tag == "Hint")
+                            {
+                                if(gameObject.tag == "Hint") return;
+
+                                Panel_to_CloseUp[i].GetComponent<CloseUp>().StartCoroutine(AudioFadeOutPause());
+
+                            }
+                            else
+                            {
+
+                                if(gameObject.tag == "Hint")
+                                {
+                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().UnPause();
+                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(BGM_Volume, 2f);
+                                }
+
+                                else
+                                    return;
+
+                            }
+
+
+
+                            return;
+                        }
+                    }
+
+                    for(int i = 0; i < Panel_to_Out.Length; i++)
+                    {
+                        if(hit.collider.gameObject == Panel_to_Out[i])
+                        {
+                            gameObject.SetActive(false);
+
+
+                            if(PreviousPanel == null)
+                            {
+                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().UnPause();
+                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(BGM_Volume, 2f);
+                            }
+
+                            else
+                            {
+                                if(PreviousPanel.tag == "Hint")
+                                    PreviousPanel.GetComponent<CloseUp>().StartCoroutine(AudioFadeOutPause());
+                                else
+                                {
+                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().UnPause();
+                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(BGM_Volume, 2f);
+                                }
+
+                            }
+
+
+
+                            return;
+                        }
+                    }            
+            }
+        }
+
+        else if(Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
@@ -64,7 +140,7 @@ public class CloseUp : MonoBehaviour
                         {
                             Panel_to_CloseUp[i].SetActive(true);
 
-
+                            Panel_to_Touch[i].GetComponent<OpenNextBook>()?.OpenNextBookFunc();
 
                             //BGM
                             if(Panel_to_CloseUp[i].tag == "Hint")

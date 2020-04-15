@@ -65,12 +65,21 @@ MonoBehaviour:
   speakerText: {fileID: 776254094059291073}
   contentText: {fileID: 1272106769397373856}
   delaySec: 0.03
-  audioClips: []
-  isDialogueing: 0
+  audioClips:
+  - {fileID: 8300000, guid: 64256c6a90b78d9418b4f8c5dc531085, type: 3}
+  isDialogueing: 1
   isDDororo: 0
-  speakersBuffer: []
-  contentsBuffer: []
+  speakersBuffer:
+  - ???
+  - ???
+  contentsBuffer:
+  - "\uAC8C\uC784\uC744 \uBCF8\uACA9\uC801\uC73C\uB85C \uC2DC\uC791\uD558\uAE30\uC5D0
+    \uC55E\uC11C, \n\uAC04\uB2E8\uD55C \uD29C\uD1A0\uB9AC\uC5BC\uC744 \uC9C4\uD589\uD558\uB824
+    \uD569\uB2C8\uB2E4."
+  - "\uBA3C\uC800 \uC67C\uCABD \uD654\uC0B4\uD45C\uB97C \uB20C\uB7EC \uBC29\uC758
+    \uC606\uBA74\uC744 \uBD10\uC8FC\uC138\uC694."
   afterDialogueTrigger: {fileID: 0}
+  TutorPanel: {fileID: 0}
 --- !u!114 &8447286306088964389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,11 +149,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 64256c6a90b78d9418b4f8c5dc531085, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

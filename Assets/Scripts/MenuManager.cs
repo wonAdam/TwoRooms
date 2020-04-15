@@ -12,11 +12,15 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] Text debugText;
 
+    public SFXManager SFXManager;
+
 
     void Start()
     {
         ///세이브 파일을 확인하여 이어하기 버튼의 interactable여부를 결정
         Screen.SetResolution(1920,1080,FullScreenMode.FullScreenWindow);
+
+        SFXManager = FindObjectOfType<SFXManager>();
         if(FindObjectOfType<SaveManager>().IsSaveFile())
         {
             continueBtn.interactable = true;
@@ -33,8 +37,20 @@ public class MenuManager : MonoBehaviour
         
     }
 
+    public void ClickSFX()
+    {
+        SFXManager.PlaySFX(SFXManager.Click);
+    }
+
+    public void SlideSFX()
+    {
+        SFXManager.PlaySFX(SFXManager.PaperFlip1);
+    }
+
     public void OnClick_Start()
     {
+
+        SFXManager.PlaySFX(SFXManager.Click);
         if(FindObjectOfType<SaveManager>().IsSaveFile())
         {
             saveLossMessage.OpenWindow();
@@ -48,7 +64,7 @@ public class MenuManager : MonoBehaviour
     }
     public void OnClick_Continue()
     {
-
+        SFXManager.PlaySFX(SFXManager.Click);
         Data data = FindObjectOfType<SaveManager>().Load();
 
         //if(A의 세이브자료가 있으면) //UnityEngine.SceneManagement.SceneManager.LoadScene("A_Room_Scene");
@@ -65,6 +81,7 @@ public class MenuManager : MonoBehaviour
 
     public void OnClick_Quit()
     {
+        SFXManager.PlaySFX(SFXManager.Click);
         Application.Quit();
     }
 

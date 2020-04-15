@@ -28,6 +28,10 @@ public class SFXManager : MonoBehaviour
     [SerializeField] public AudioClip PrinceBoxOpen;
     [SerializeField] public AudioClip TurnOn;
     [SerializeField] public AudioClip VaultOpen;
+    [SerializeField] public AudioClip TryToOpenDoor;
+    [SerializeField] public AudioClip DoorKnock;
+    [SerializeField] public AudioClip LogoSFX;
+    [SerializeField] public AudioClip Click;
 
     public void PlaySFX(AudioClip audioClip)
     {

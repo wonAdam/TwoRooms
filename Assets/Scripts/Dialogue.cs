@@ -15,8 +15,8 @@ public class Dialogue : MonoBehaviour
     public bool isDDororo = false;
     public List<string> speakersBuffer;
     public List<string> contentsBuffer;
-    [SerializeField] Animator afterDialogueTrigger = null;
-
+    [SerializeField] public Animator afterDialogueTrigger = null;
+    [SerializeField] public GameObject TutorPanel = null;
     public void StartDialogue(List<KeyValuePair<string, string>> speakerNcontents, int audioClips_index = 0)
     {
         var closeUps = FindObjectsOfType<CloseUp>();
@@ -122,6 +122,11 @@ public class Dialogue : MonoBehaviour
             {
 
                 StartCoroutine(Dialogue_Coroutine(speakersBuffer[0], contentsBuffer[0]));
+
+                if(afterDialogueTrigger != null)
+                {
+                    afterDialogueTrigger.SetTrigger("NextState");
+                }
                 
             }
 
@@ -131,8 +136,7 @@ public class Dialogue : MonoBehaviour
 
             speakerText.text = "";
             contentText.text = "";
-            gameObject.SetActive(false);
-
+            
             var closeUps = FindObjectsOfType<CloseUp>();
             for(int i = 0 ; i < closeUps.Length; i++)
             {
@@ -142,7 +146,10 @@ public class Dialogue : MonoBehaviour
             if(afterDialogueTrigger != null)
             {
                 afterDialogueTrigger.SetTrigger("NextScene");
+                afterDialogueTrigger.SetTrigger("NextState");
             }
+
+            gameObject.SetActive(false);              
         }
 
     }

@@ -27,17 +27,36 @@ public class SceneManager : MonoBehaviour
 
     public SaveManager saveManager;
 
+    public bool shouldTutor = false;
+
     enum Room { A, B };
     [SerializeField] Room thisRoom;
 
     void Awake()
     {
+        saveManager = FindObjectOfType<SaveManager>();
+
+        foreach(TutorialEnable te in Resources.FindObjectsOfTypeAll<TutorialEnable>())
+        {
+            te.enabled = false;
+        }
+
         Screen.SetResolution(1920,1080,true);
     }
 
     void Start()
     {
-        saveManager = FindObjectOfType<SaveManager>();
+        if(saveManager.IsSaveFile())
+        {
+            Debug.Log("Save있음");
+            Resources.FindObjectsOfTypeAll<TutorialEnder>()[0].EndTutorial();
+        }
+        else
+        {
+            Debug.Log("Save없음");
+        }
+
+
         Initialize_Room(currentWallIndex);        
     }
 
@@ -48,12 +67,35 @@ public class SceneManager : MonoBehaviour
         yield return new WaitForSeconds(fadeInWaitSeconds);
         fadeInOut.DOFade(0f, fadeInSeconds);
         yield return new WaitForSeconds(fadeInSeconds);
+
+        //Tutorial 시작
+
+        //세이브 파일이 없으면
+        if(shouldTutor)
+        {
+
+            //튜토리얼 시작
+            FindObjectOfType<TutorialManager>().StartOfTutorial();               
+            
+            
+            foreach(TutorialEnable te in Resources.FindObjectsOfTypeAll<TutorialEnable>())
+            {
+                te.enabled = true;
+            }            
+            
+     
+        }
+
+
+
         fadeInOut.gameObject.SetActive(false);
+
+
     }
 
     private void Initialize_Room(int startWallIndex)
     {
-        StartCoroutine(Initialization_FadeIn());
+
         Set_Room_Panel(currentWallIndex);
 
         for(int i = 0; i < CloseUpPanel.Length; i++)
@@ -64,18 +106,42 @@ public class SceneManager : MonoBehaviour
 
         //Load
         if(saveManager.IsSaveFile())
-        {
+        {            
+            shouldTutor = false;
             if(thisRoom == Room.A)
                 A_LevelLoad(saveManager.Load().level);
             else
+            {
                 B_LevelLoad(saveManager.Load().level);
+                BookLoad(saveManager.Load().book);
+            }
         }
         else
         {
+
+            shouldTutor = true;
             if(thisRoom == Room.A)
                 saveManager.Save('A', 0);
             else
                 saveManager.Save('B', 0);
+
+        }
+
+        StartCoroutine(Initialization_FadeIn());
+
+    }
+
+    [SerializeField] OpenNextBook[] openNextBooks;
+    public void BookLoad(int indexBook)
+    {
+        if(indexBook == 0) return;
+
+        foreach(OpenNextBook onb in openNextBooks)
+        {
+            if(onb.indexOfThisBook <= indexBook)
+            {
+                onb.gameObject.SetActive(true);
+            }
         }
 
 

@@ -57,16 +57,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Level1OFF: []
-  Level1ON: []
-  Level2OFF: []
-  Level2ON: []
-  Level3OFF: []
-  Level3ON: []
-  Level4OFF: []
-  Level4ON: []
+  dialoguePanel: {fileID: 0}
+  fadeInOut: {fileID: 0}
+  fadeInSeconds: 3
+  fadeInWaitSeconds: 1
+  a_1_Answer: {fileID: 0}
+  a_2_Answer: {fileID: 0}
+  a_3_Answer: {fileID: 0}
+  b_1_Answer: {fileID: 0}
+  b_2_Answer: {fileID: 0}
+  b_3_Answer: {fileID: 0}
   currentWallIndex: 0
+  saveManager: {fileID: 0}
+  thisRoom: 0

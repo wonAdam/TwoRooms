@@ -68,6 +68,10 @@ MonoBehaviour:
   PrinceBoxOpen: {fileID: 8300000, guid: e62c01071342e3e4b82986e339c859f6, type: 3}
   TurnOn: {fileID: 8300000, guid: 0cb9fce848f43f64f9dde8beeb7460a1, type: 3}
   VaultOpen: {fileID: 8300000, guid: 739c8872f1bd59f4195ebeeefb181fb2, type: 3}
+  TryToOpenDoor: {fileID: 8300000, guid: 82bc3a21f389f0148a99cca2e0a3c2cc, type: 3}
+  DoorKnock: {fileID: 8300000, guid: 1b55f0bd34102134cae1aeff6b288141, type: 3}
+  LogoSFX: {fileID: 8300000, guid: 52bf4fecf40fe904aaf764c995f0f483, type: 3}
+  Click: {fileID: 8300000, guid: a765109e0e9954bbfbec6ff4a77c527b, type: 3}
 --- !u!82 &4171575763027904189
 AudioSource:
   m_ObjectHideFlags: 0

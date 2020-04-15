@@ -8,12 +8,12 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class SaveManager : MonoBehaviour
 {
 
-    public void Save(char room, int level)
+    public void Save(char room, int level, int book = 0)
     {
         string path = GetPathFromSaveFile();
         using (FileStream stream = File.Open(path, FileMode.Create)) 
         {
-            Data data = new Data(room, level);
+            Data data = new Data(room, level, book);
             BinaryFormatter formatter = new BinaryFormatter();
             formatter.Serialize(stream, data);
         }

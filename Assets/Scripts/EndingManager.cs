@@ -61,6 +61,11 @@ public class EndingManager : MonoBehaviour
         SFXManager.PlaySFX(SFXManager.DoorOpen);
     }
 
+    public void LogoSFX()
+    {
+        SFXManager.PlaySFX(SFXManager.LogoSFX);
+    }
+
     public void LoadToMain()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
