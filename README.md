@@ -38,6 +38,6 @@ Game Designer (3) : Yoo Jae Young, Yang Seung Kwang, Kim Jung Yeon
 
 Graphic Designer (3) : Kim Dong Yeon, Ji Min Chae, Park Yeon Joon
 
-Programmer (2) : Won Dong Hyun(wonAdam), Park Hyun Ji
+Programmer (2) : Won Dong Hyun(wonAdam), Park Hyeon Ji
 
 Sound Designer & Project Manager (1) : Park Dong Hoon
