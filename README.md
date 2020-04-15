@@ -36,7 +36,7 @@ Dev Period : 2019.12.25 ~ 2020.04.15
 
 Game Designer (3) : Yoo Jae Young, Yang Seung Kwang, Kim Jung Yeon
 
-Graphic Designer (3) : Kim Dong Yeon, Ji Min Chae, Park Yeon Joon
+Graphic Designer (3) : Kim Dong Yeon, Ji Min Chae, Park Yeon Jun
 
 Programmer (2) : Won Dong Hyun(wonAdam), Park Hyeon Ji
 
