@@ -9,6 +9,7 @@ public class DescriptionBGM : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
+        Screen.SetResolution(1920,1080,FullScreenMode.FullScreenWindow);
     }
 
     

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Android;
 
 public class MenuManager : MonoBehaviour
 {
@@ -19,6 +20,14 @@ public class MenuManager : MonoBehaviour
     {
         ///세이브 파일을 확인하여 이어하기 버튼의 interactable여부를 결정
         Screen.SetResolution(1920,1080,FullScreenMode.FullScreenWindow);
+
+        if(UnityEngine.Android.Permission.HasUserAuthorizedPermission(Permission.ExternalStorageRead))
+        {
+        }
+        else
+        {
+            UnityEngine.Android.Permission.RequestUserPermission(Permission.ExternalStorageRead);
+        }
 
         SFXManager = FindObjectOfType<SFXManager>();
         if(FindObjectOfType<SaveManager>().IsSaveFile())

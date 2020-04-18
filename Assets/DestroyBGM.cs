@@ -9,6 +9,7 @@ public class DestroyBGM : MonoBehaviour
     void Start()
     {
         FindObjectOfType<DescriptionBGM>().GetComponent<AudioSource>().DOFade(0f, 4f);
+        Screen.SetResolution(1920,1080,FullScreenMode.FullScreenWindow);
         Invoke("DestroyBGMFunc", 4f);
     }
 
