@@ -16,6 +16,17 @@ public class PaperFlip : MonoBehaviour
         SFXManager = FindObjectOfType<SFXManager>();
     }
 
+    void OnEnable()
+    {
+        
+    }
+
+    void OnDisable()
+    {
+        isAnimating = false;
+    }
+
+
     public void OnMouseDownTrigger()
     {
     
