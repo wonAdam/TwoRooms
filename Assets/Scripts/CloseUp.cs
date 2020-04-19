@@ -74,7 +74,7 @@ public class CloseUp : MonoBehaviour
                                 if(gameObject.tag == "Hint")
                                 {
                                     FindObjectOfType<GameManager>().GetComponent<AudioSource>().UnPause();
-                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(BGM_Volume, 2f);
+                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(FindObjectOfType<GameManager>().volume, 2f);
                                 }
 
                                 else
@@ -98,7 +98,7 @@ public class CloseUp : MonoBehaviour
                             if(PreviousPanel == null)
                             {
                                     FindObjectOfType<GameManager>().GetComponent<AudioSource>().UnPause();
-                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(BGM_Volume, 2f);
+                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(FindObjectOfType<GameManager>().volume, 2f);
                             }
 
                             else
@@ -108,7 +108,7 @@ public class CloseUp : MonoBehaviour
                                 else
                                 {
                                     FindObjectOfType<GameManager>().GetComponent<AudioSource>().UnPause();
-                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(BGM_Volume, 2f);
+                                    FindObjectOfType<GameManager>().GetComponent<AudioSource>().DOFade(FindObjectOfType<GameManager>().volume, 2f);
                                 }
 
                             }
