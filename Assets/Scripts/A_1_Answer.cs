@@ -90,7 +90,8 @@ public class A_1_Answer : MonoBehaviour
 
         if(FindObjectOfType<SaveManager>().Load().level < 1)
         {
-            FindObjectOfType<SaveManager>().Save('A', 1);
+            FindObjectOfType<SaveManager>().Save('A', 1,  
+                FindObjectOfType<SaveManager>().Load().book);
         }
     }
 

@@ -83,7 +83,8 @@ public class A_2_Answer : MonoBehaviour
 
         if(FindObjectOfType<SaveManager>().Load().level < 2)
         {
-            FindObjectOfType<SaveManager>().Save('A', 2);
+            FindObjectOfType<SaveManager>().Save('A', 2,  
+                FindObjectOfType<SaveManager>().Load().book);
         }
     }    
     private void DisableSaveUI()

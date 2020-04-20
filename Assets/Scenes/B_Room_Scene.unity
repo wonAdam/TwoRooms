@@ -847,6 +847,123 @@ PrefabInstance:
       propertyPath: answers.Array.data[2]
       value: ehls
       objectReference: {fileID: 0}
+    - target: {fileID: 2365194507080840743, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: character.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: content.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: isInterview
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: character.Array.data[0]
+      value: MC
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: character.Array.data[2]
+      value: MC
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: character.Array.data[1]
+      value: "\uC8FC\uC778\uACF5"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: character.Array.data[3]
+      value: "\uC8FC\uC778\uACF5"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: character.Array.data[4]
+      value: "\uC8FC\uC778\uACF5"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: character.Array.data[5]
+      value: "\uC8FC\uC778\uACF5"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: content.Array.data[0]
+      value: "\uC774\uBC88 \uD788\uD2B8\uC791\uC73C\uB85C \uC815\uB9D0 \uB9CE\uC740
+        \uC0AC\uB78C\uB4E4\uC5D0\uAC8C \uC774\uB984\uC744 \uC54C\uB9B0, \n\u3147\u3147\u3147\uC528\uB97C
+        \uC18C\uAC1C\uD569\uB2C8\uB2E4!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: content.Array.data[1]
+      value: "\uC548\uB155\uD558\uC138\uC694. \u3147\u3147\u3147\uC785\uB2C8\uB2E4.
+        \uC5EC\uB7EC\uBD84\uACFC \uC774\uB807\uAC8C \uC18C\uD1B5\uD560 \uAE30\uD68C\uB97C
+        \uC5BB\uAC8C \uB418\uC5B4\uC11C \n\uC601\uAD11\uC785\uB2C8\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: content.Array.data[2]
+      value: "\u3147\u3147\u3147\uC528\uB97C \uBA3C\uC800 \uD55C\uB2E8\uC5B4\uB85C
+        \uD45C\uD604\uD55C\uB2E4\uBA74 \uC5B4\uB5BB\uAC8C \uD45C\uD604\uD560 \uC218
+        \uC788\uC744\uAE4C\uC694?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: content.Array.data[3]
+      value: "\uC81C \uB9D0\uB85C \uB9D0\uD558\uAE30\uB294 \uC870\uAE08 \uBD80\uB044\uB7FD\uC9C0\uB9CC
+        \uC800\uB294 \uB048\uAE30\uB77C\uACE0 \uD45C\uD604\uD558\uACE0 \uC2F6\uC5B4\uC694.
+        \ \n\uC0AC\uC2E4 \uC774\uB807\uAC8C \uC131\uACF5\uAE4C\uC9C0 \uC624\uB294
+        \uAE38\uC740"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: content.Array.data[4]
+      value: "\uC81C\uAC00 \uC608\uC0C1\uD588\uB358 \uAC83\uBCF4\uB2E4\uB3C4 \uB354
+        \uC6B8\uD241\uBD88\uD241\uD55C \uC790\uAC08\uAE38\uC774\uC5C8\uC2B5\uB2C8\uB2E4.
+        \n\uADF8 \uAE38\uC744 \uAC78\uC73C\uBA70 \uBAA8\uB4E0 \uAC83 \uD3EC\uAE30\uD558\uACE0
+        \uC2F6\uC740 \uC21C\uAC04\uC774 \uD55C\uB450\uBC88\uC774 \uC544\uB2C8\uC5C8\uC9C0\uB9CC"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: content.Array.data[5]
+      value: "\uC5B8\uC820\uAC00 \uD3EC\uAE30\uD558\uB294 \uAC83\uC744 \uAFC8 \uAFBC\uC801\uC774
+        \uC788\uB294\uB370, \uC81C\uAC00 \uBAA8\uB974\uB294 \uB204\uAD70\uAC00\uAC00
+        \uC800\uB97C \uC77C\uC73C\uCF1C\uC138\uC6CC\uC92C\uC2B5\uB2C8\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: content.Array.data[6]
+      value: "\uADF8 \uC774\uD6C4\uB85C \uC800\uB294 \uB9D0\uADF8\uB300\uB85C \uB048\uAE30\uC788\uAC8C
+        \uBC84\uD168\uC654\uC2B5\uB2C8\uB2E4. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: content.Array.data[7]
+      value: "\uBAA8\uB450 \uC800\uB9C8\uB2E4\uC758 \uC774\uC720\uB85C \uC790\uAC08\uAE38\uC744
+        \uAC77\uACE0 \uACC4\uC2DC\uC9C0\uB9CC, \n\uACE7 \uB2E4\uAC00\uC62C \uAF43\uAE38\uAE4C\uC9C0
+        \uD654\uC774\uD305\uC785\uB2C8\uB2E4!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: character.Array.data[6]
+      value: "\uC8FC\uC778\uACF5"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880878778675772164, guid: 1ae025ae9e0bfd1439e389547a94f493,
+        type: 3}
+      propertyPath: character.Array.data[7]
+      value: "\uC8FC\uC778\uACF5"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ae025ae9e0bfd1439e389547a94f493, type: 3}
 --- !u!1 &1040986959 stripped

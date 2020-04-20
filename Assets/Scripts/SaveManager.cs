@@ -8,7 +8,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class SaveManager : MonoBehaviour
 {
 
-    public void Save(char room, int level, int book = 0)
+    public void Save(char room, int level, int book = 0, bool interview = true)
     {
         // string path = GetPathFromSaveFile();
         // using (FileStream stream = File.Open(path, FileMode.Create)) 
@@ -18,7 +18,7 @@ public class SaveManager : MonoBehaviour
         //     formatter.Serialize(stream, data);
         // }
 
-        Data data = new Data(room, level, book);
+        Data data = new Data(room, level, book, interview);
         string JsonData = JsonUtility.ToJson(data);
 
         string path = GetPathFromSaveFile();

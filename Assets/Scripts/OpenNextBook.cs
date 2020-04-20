@@ -19,6 +19,10 @@ public class OpenNextBook : MonoBehaviour
         }
         isClicked = true;
 
-        FindObjectOfType<SaveManager>().Save(FindObjectOfType<SaveManager>().Load().Room, FindObjectOfType<SaveManager>().Load().level, indexOfThisBook);
+        FindObjectOfType<SaveManager>().Save(
+            FindObjectOfType<SaveManager>().Load().Room, 
+            FindObjectOfType<SaveManager>().Load().level, 
+            indexOfThisBook,
+            FindObjectOfType<SaveManager>().Load().interview);
     }
 }
