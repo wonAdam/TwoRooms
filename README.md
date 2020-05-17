@@ -4,7 +4,8 @@
 
 I have worked on this project in 2019 winter vacation with ExP Make Team, Hongik Univ. Game Dev Club.
 
-
+> 출시 링크 : https://play.google.com/store/apps/details?id=com.exp.tworooms&hl=ko
+Release Link
 
 
 > **2D** / **2인 협력** / **방탈출** / **안드로이드** 게임입니다.
