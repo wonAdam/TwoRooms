@@ -832,21 +832,6 @@ PrefabInstance:
       propertyPath: SFXManager
       value: 
       objectReference: {fileID: 106111442}
-    - target: {fileID: 1582631164323316827, guid: 1ae025ae9e0bfd1439e389547a94f493,
-        type: 3}
-      propertyPath: answers.Array.data[0]
-      value: EHLS
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582631164323316827, guid: 1ae025ae9e0bfd1439e389547a94f493,
-        type: 3}
-      propertyPath: answers.Array.data[1]
-      value: Ehls
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582631164323316827, guid: 1ae025ae9e0bfd1439e389547a94f493,
-        type: 3}
-      propertyPath: answers.Array.data[2]
-      value: ehls
-      objectReference: {fileID: 0}
     - target: {fileID: 2365194507080840743, guid: 1ae025ae9e0bfd1439e389547a94f493,
         type: 3}
       propertyPath: m_IsActive

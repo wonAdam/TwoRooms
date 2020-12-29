@@ -5745,9 +5745,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laptopPwdPanel: {fileID: 7354831266879930980}
   answers:
-  - SAME
-  - Same
-  - same
+  - ELHS
+  - Elhs
+  - elhs
   laptopSidePanel: {fileID: 978974911}
   afterAnswerLaptop: {fileID: 2365194507080840743}
   SFXManager: {fileID: 0}
@@ -16488,6 +16488,9 @@ MonoBehaviour:
   ClickedMark: {fileID: 5784150448324337923}
   init_pos: {x: 0, y: 0, z: 0}
   isOpened: 0
+  isInterview: 0
+  character: []
+  content: []
 --- !u!1 &4106131973488617077
 GameObject:
   m_ObjectHideFlags: 0
@@ -24531,6 +24534,9 @@ MonoBehaviour:
   ClickedMark: {fileID: 5418111232712067269}
   init_pos: {x: 0, y: 0, z: 0}
   isOpened: 0
+  isInterview: 0
+  character: []
+  content: []
 --- !u!1 &6828261124635673190
 GameObject:
   m_ObjectHideFlags: 0
@@ -27960,18 +27966,6 @@ MonoBehaviour:
   b_3_Answer: {fileID: 7091122334283524855}
   imgIndex: 0
   SFXManager: {fileID: 0}
---- !u!114 &1857515085726830778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8308367696815957339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b98ddee770379f44781298262c3e95e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1040986976
 Animator:
   serializedVersion: 3
@@ -27991,6 +27985,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1857515085726830778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8308367696815957339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98ddee770379f44781298262c3e95e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8361803910863944474
 GameObject:
   m_ObjectHideFlags: 0
@@ -30212,11 +30218,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 139663856948162086}
     m_Modifications:
-    - target: {fileID: 5692095062543749603, guid: 6863bdbe3f6e8484da9448ded35f3743,
-        type: 3}
-      propertyPath: m_Name
-      value: B_Tutorial_Panel
-      objectReference: {fileID: 0}
     - target: {fileID: 22199486915601266, guid: 6863bdbe3f6e8484da9448ded35f3743,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30322,6 +30323,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5692095062543749603, guid: 6863bdbe3f6e8484da9448ded35f3743,
+        type: 3}
+      propertyPath: m_Name
+      value: B_Tutorial_Panel
+      objectReference: {fileID: 0}
     - target: {fileID: 8742429735458759573, guid: 6863bdbe3f6e8484da9448ded35f3743,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -30421,11 +30427,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 139663856948162086}
     m_Modifications:
-    - target: {fileID: 7290652911716824645, guid: 9ff1084461dbfab4980d55515a398b58,
-        type: 3}
-      propertyPath: m_Name
-      value: menuBtn
-      objectReference: {fileID: 0}
     - target: {fileID: 1937510698327954306, guid: 9ff1084461dbfab4980d55515a398b58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30530,6 +30531,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290652911716824645, guid: 9ff1084461dbfab4980d55515a398b58,
+        type: 3}
+      propertyPath: m_Name
+      value: menuBtn
       objectReference: {fileID: 0}
     - target: {fileID: 4330380943348906784, guid: 9ff1084461dbfab4980d55515a398b58,
         type: 3}
@@ -30752,11 +30758,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 139663856948162086}
     m_Modifications:
-    - target: {fileID: 1677125090335278622, guid: a8a27604114afc7418a67d7d566a15d5,
-        type: 3}
-      propertyPath: m_Name
-      value: Dialogue
-      objectReference: {fileID: 0}
     - target: {fileID: 8683425385436894040, guid: a8a27604114afc7418a67d7d566a15d5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30861,6 +30862,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677125090335278622, guid: a8a27604114afc7418a67d7d566a15d5,
+        type: 3}
+      propertyPath: m_Name
+      value: Dialogue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a27604114afc7418a67d7d566a15d5, type: 3}
